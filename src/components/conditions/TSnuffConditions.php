@@ -26,6 +26,7 @@ trait TSnuffConditions
 
     /**
      * @param string $name
+     * @throws \Exception
      */
     protected function createSnuffCondition(string $name): void
     {
@@ -34,6 +35,8 @@ trait TSnuffConditions
 
         if (isset($byName[$name])) {
             $this->getConditionRepository()->create(new Condition($byName[$name]));
+        } else {
+            throw new \Exception(sprintf('Unknown condition "%s"', $name));
         }
     }
 
