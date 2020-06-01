@@ -1,5 +1,5 @@
-![tests](https://github.com/jeyroik/extas-snuff-conditions/workflows/PHP%20Composer/badge.svg?branch=master&event=push)
-![codecov.io](https://codecov.io/gh/jeyroik/extas-snuff-conditions/coverage.svg?branch=master)
+![tests](https://github.com/jeyroik/extas-snuffbox-conditions/workflows/PHP%20Composer/badge.svg?branch=master&event=push)
+![codecov.io](https://codecov.io/gh/jeyroik/extas-snuffbox-conditions/coverage.svg?branch=master)
 <a href="https://github.com/phpstan/phpstan"><img src="https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat" alt="PHPStan Enabled"></a>
 <a href="https://codeclimate.com/github/jeyroik/extas-snuffbox-conditions/maintainability"><img src="https://api.codeclimate.com/v1/badges/8a1d3c3b0f512e519e3d/maintainability" /></a>
 
