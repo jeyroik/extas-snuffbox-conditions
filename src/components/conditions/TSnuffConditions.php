@@ -61,6 +61,7 @@ trait TSnuffConditions
 
     /**
      * @return array
+     * @throws \Exception
      */
     protected function getAvailableConditions(): array
     {
@@ -69,6 +70,8 @@ trait TSnuffConditions
             if (is_file($condExtasPath)) {
                 $condExtas = json_decode(file_get_contents($condExtasPath), true);
                 return $this->available = $condExtas['conditions'] ?? [];
+            } else {
+                throw new \Exception(sprintf('Missed conditions specs file on %s', $condExtasPath));
             }
         }
 
