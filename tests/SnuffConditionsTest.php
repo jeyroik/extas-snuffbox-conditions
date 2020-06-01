@@ -30,7 +30,7 @@ class SnuffConditionsTest extends TestCase
 
     public function testSnuffbox()
     {
-        $this->createSnuffConditions(['eq']);
+        $this->createSnuffConditions(['equal']);
         $cond = $this->condRepo->all([]);
         $this->assertCount(1, $cond);
 
