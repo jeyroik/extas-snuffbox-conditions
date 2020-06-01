@@ -1,0 +1,12 @@
+{
+  "name": "jeyroik/extas-snuffbox-conditions",
+  "description": "Conditions snuffbox fox Extas",
+  "require": {
+    "jeyroik/extas-conditions": "0.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "extas\\": "src/"
+    }
+  }
+}
