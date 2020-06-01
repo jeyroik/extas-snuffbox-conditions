@@ -25,6 +25,7 @@ class SnuffConditionsTest extends TestCase
         $env = Dotenv::create(getcwd() . '/tests/');
         $env->load();
         $this->condRepo = new ConditionRepository();
+        $this->condRepo->drop();
     }
 
     public function testSnuffbox()
