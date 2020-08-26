@@ -1,6 +1,7 @@
 <?php
 namespace extas\components\conditions;
 
+use extas\components\THasMagicClass;
 use extas\interfaces\conditions\ICondition;
 use extas\interfaces\repositories\IRepository;
 
@@ -12,6 +13,8 @@ use extas\interfaces\repositories\IRepository;
  */
 trait TSnuffConditions
 {
+    use THasMagicClass;
+
     protected array $available = [];
 
     /**
@@ -56,7 +59,7 @@ trait TSnuffConditions
      */
     protected function getConditionRepository(): IRepository
     {
-        return new ConditionRepository();
+        return $this->getMagicClass('conditions');
     }
 
     /**
