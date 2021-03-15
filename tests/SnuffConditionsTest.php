@@ -2,8 +2,11 @@
 namespace tests;
 
 use Dotenv\Dotenv;
+use extas\components\conditions\Condition;
 use extas\components\conditions\ConditionRepository;
 use extas\components\conditions\TSnuffConditions;
+use extas\components\repositories\TSnuffRepositoryDynamic;
+use extas\components\THasMagicClass;
 use extas\interfaces\repositories\IRepository;
 use PHPUnit\Framework\TestCase;
 
@@ -16,6 +19,8 @@ use PHPUnit\Framework\TestCase;
 class SnuffConditionsTest extends TestCase
 {
     use TSnuffConditions;
+    use TSnuffRepositoryDynamic;
+    use THasMagicClass;
 
     protected IRepository $condRepo;
 
@@ -24,7 +29,10 @@ class SnuffConditionsTest extends TestCase
         parent::setUp();
         $env = Dotenv::create(getcwd() . '/tests/');
         $env->load();
-        $this->condRepo = new ConditionRepository();
+        $this->createSnuffDynamicRepositories([
+            ['conditions', 'name', Condition::class]
+        ]);
+        $this->condRepo = $this->getMagicClass('conditions');
         $this->condRepo->drop();
     }
 
